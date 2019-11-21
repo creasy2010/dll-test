@@ -19,5 +19,8 @@
   "homepage": "https://github.com/creasy2010/dll-test#readme",
   "devDependencies": {
     "typescript": "^3.7.2"
+  },
+  "dependencies": {
+    "node-gyp": "^6.0.1"
   }
 }
