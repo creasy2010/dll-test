@@ -22,4 +22,4 @@ var testLib = ffi.Library(libpath, {
   'CloseDev': [[], ['bool']]
 });
 
-console.log(testLib.OpenDev(true));
+console.log("Scan方法返回值::",testLib.Scan());
