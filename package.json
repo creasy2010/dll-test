@@ -21,6 +21,7 @@
     "typescript": "^3.7.2"
   },
   "dependencies": {
+    "ffi": "^2.3.0",
     "node-gyp": "^6.0.1"
   }
 }
