@@ -7,8 +7,7 @@
     "sourceMap": false,
     "lib": ["es2015","es2017"],
     "outDir": "./dist",
-    "declarationDir":"./declarations",
-    "declaration": true
+    "declaration": false
   },
   "exclude": ["node_modules"]
 }
