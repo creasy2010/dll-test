@@ -11,7 +11,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const path_1 = require("path");
 var ffi = require('ffi');
 // import ffi from  'ffi';
-var libpath = path_1.join(__dirname, '../YzfDrTicketsScan(1).dll');
+var libpath = path_1.join(__dirname, '../YzfDrTwains');
 var testLib = ffi.Library(libpath, {
     'OpenDev': [[], ['bool']],
     'DevIsOpen': [[], ['bool']],
@@ -20,4 +20,4 @@ var testLib = ffi.Library(libpath, {
     'GetStatus': [[], ['bool']],
     'CloseDev': [[], ['bool']]
 });
-console.log(testLib.OpenDev());
+console.log("Scan方法返回值::", testLib.Scan());
