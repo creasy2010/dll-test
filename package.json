@@ -4,7 +4,8 @@
   "description": "node 加载dll测试",
   "main": "index.js",
   "scripts": {
-    "start": "tsc && node ./dist/index.js",
+    "build": "tsc ",
+    "start": "electron ./dist/main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,13 +19,12 @@
   },
   "homepage": "https://github.com/creasy2010/dll-test#readme",
   "devDependencies": {
-    "electron": "^7.1.2",
+    "node-gyp": "^6.0.1",
     "typescript": "^3.7.2"
   },
   "dependencies": {
     "ffi": "^2.3.0",
     "fs-extra": "^8.1.0",
-    "node-gyp": "^6.0.1",
     "urllib": "^2.34.1"
   }
 }

@@ -8,7 +8,7 @@
  **/
 
 import {ipcRenderer} from 'electron';
-import {Scan} from './hardware';
+// import {Scan} from './hardware';
 import * as urllib from 'urllib';
 import * as fsExtra from 'fs-extra';
 import * as path from 'path';
@@ -34,6 +34,6 @@ window.readConfig = function() {
 };
 
 //@ts-ignore
-window.__dev__ = {
-  scan: Scan,
-};
+// window.__dev__ = {
+//   scan: Scan,
+// };

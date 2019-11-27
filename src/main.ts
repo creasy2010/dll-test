@@ -42,7 +42,7 @@ function createWindow() {
     // width: 800,
   });
 
-  mainWindow.loadURL("http://fpcheck.yzf.net/");
+  mainWindow.loadURL("http://fpcy.yunzhangfang.com/");
 
   mainWindow.on("closed", () => {
     mainWindow = null;
