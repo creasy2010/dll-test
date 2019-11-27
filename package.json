@@ -5,6 +5,7 @@
   "main": "./dist/index.js",
   "scripts": {
     "build": "tsc ",
+    "rebuild": "electron-rebuild",
     "exe": "electron-builder build",
     "start": "electron ./dist/main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -26,6 +27,7 @@
     "typescript": "^3.7.2"
   },
   "dependencies": {
+    "electron-rebuild": "^1.8.8",
     "ffi": "^2.3.0",
     "fs-extra": "^8.1.0",
     "urllib": "^2.34.1"
