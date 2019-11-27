@@ -23,7 +23,7 @@ var testLib = ffi.Library(libpath, {
 
 export  class Scan {
 
-  constructor(){
+  constructor() {
 
   }
 
@@ -36,7 +36,6 @@ export  class Scan {
   static devIsOpen():boolean{
     return testLib.DevIsOpen();
   }
-
 
 
   static getImageCounts():number{

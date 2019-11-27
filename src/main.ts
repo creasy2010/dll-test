@@ -42,30 +42,9 @@ function createWindow() {
     // width: 800,
   });
 
-  //TODO 过滤器怎么不起作用呢 ?
-  // session.defaultSession.webRequest.onResponseStarted(filter,(details:OnResponseStartedDetails) => {
-  //
-  //   if(details.url.includes("employee/login") && details.method==='POST'){
-  //     console.log('返回值为: ',details);
-  //     setTimeout(()=>{
-  //       mainWindow.loadURL('http://localhost:3002/pages/moon/list');
-  //     },1000);
-  //   }
-  // })
-
-  //@ts-ignore
-  // mainWindow.webContents.session.setPreloads(join(__dirname,'./preload.js'));
-
-  // and load the index.html of the app.
-  // mainWindow.loadFile(path.join(__dirname, "../index.html"));
   mainWindow.loadURL("http://fpcheck.yzf.net/");
-  // mainWindow.loadURL("http://localhost:8787/");
-  // mainWindow.webContents.openDevTools();
 
   mainWindow.on("closed", () => {
-    // Dereference the window object, usually you would store windows
-    // in an array if your app supports multi windows, this is the time
-    // when you should delete the corresponding element.
     mainWindow = null;
   });
 }
