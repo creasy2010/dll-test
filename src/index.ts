@@ -14,12 +14,12 @@ var ffi = require('ffi');
 
 var libpath = join(__dirname, 'YzfDrTwains');
 var testLib = ffi.Library(libpath, {
-  'OpenDev': ['bool', ['void']],
-  'DevIsOpen': ['bool', ['void']],
-  'Scan': ['bool', ['void']],
-  'GetImageCounts': ['int', ['void']],
-  'GetStatus': ['int', ['void']],
-  'CloseDev': ['bool', ['void']]
+  'OpenDev': ['bool', []],
+  'DevIsOpen': ['bool', []],
+  'Scan': ['bool', []],
+  'GetImageCounts': ['int', []],
+  'GetStatus': ['int', []],
+  'CloseDev': ['bool', []]
 });
 
 console.log("Scan方法返回值::",testLib.Scan());
