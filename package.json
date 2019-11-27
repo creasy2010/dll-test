@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/creasy2010/dll-test#readme",
   "devDependencies": {
+    "electron": "^7.1.2",
     "typescript": "^3.7.2"
   },
   "dependencies": {

@@ -21,4 +21,36 @@ var testLib = ffi.Library(libpath, {
   'CloseDev': ['bool', []]
 });
 
-console.log("Scan方法返回值::",testLib.Scan());
+export  class Scan {
+
+  constructor(){
+
+  }
+
+  static openDev():boolean{
+    return testLib.OpenDev();
+  }
+
+
+
+  static devIsOpen():boolean{
+    return testLib.DevIsOpen();
+  }
+
+
+
+  static getImageCounts():number{
+    return testLib.GetImageCounts();
+  }
+
+
+
+  static getStatus():number{
+    return testLib.GetStatus();
+  }
+
+
+  static closeDev():boolean{
+    return testLib.CloseDev();
+  }
+}
