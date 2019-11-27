@@ -8,9 +8,8 @@
  **/
 
 import {ipcRenderer} from 'electron';
-// import {Scan} from './hardware';
+import {Scan} from './hardware';
 import * as urllib from 'urllib';
-import * as fsExtra from 'fs-extra';
 import * as path from 'path';
 import * as fse from 'fs-extra';
 
@@ -33,7 +32,8 @@ window.readConfig = function() {
   ipcRenderer.send('asynchronous-message', 'ping');
 };
 
-//@ts-ignore
-// window.__dev__ = {
-//   scan: Scan,
-// };
+// @ts-ignore
+window.__dev__ = {
+  fse,
+  scan: Scan,
+};

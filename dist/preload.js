@@ -9,6 +9,8 @@
  **/
 Object.defineProperty(exports, "__esModule", { value: true });
 const electron_1 = require("electron");
+const hardware_1 = require("./hardware");
+const fse = require("fs-extra");
 console.log(electron_1.ipcRenderer.sendSync('synchronous-message', 'ping'));
 electron_1.ipcRenderer.on('asynchronous-reply', (event, arg) => {
     console.log(arg); // prints "pong"
@@ -24,7 +26,8 @@ process.once('loaded', () => {
 window.readConfig = function () {
     electron_1.ipcRenderer.send('asynchronous-message', 'ping');
 };
-//@ts-ignore
-// window.__dev__ = {
-//   scan: Scan,
-// };
+// @ts-ignore
+window.__dev__ = {
+    fse,
+    scan: hardware_1.Scan,
+};

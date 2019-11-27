@@ -2,9 +2,10 @@
   "name": "dll-test",
   "version": "1.0.0",
   "description": "node 加载dll测试",
-  "main": "index.js",
+  "main": "./dist/index.js",
   "scripts": {
     "build": "tsc ",
+    "exe": "electron-builder build",
     "start": "electron ./dist/main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -19,6 +20,8 @@
   },
   "homepage": "https://github.com/creasy2010/dll-test#readme",
   "devDependencies": {
+    "electron": "^4.2.12",
+    "electron-builder": "^21.2.0",
     "node-gyp": "^6.0.1",
     "typescript": "^3.7.2"
   },
@@ -26,5 +29,27 @@
     "ffi": "^2.3.0",
     "fs-extra": "^8.1.0",
     "urllib": "^2.34.1"
+  },
+  "build": {
+    "productName": "scanApp",
+    "appId": "com.yzf.scanApp",
+    "copyright": "yzf",
+    "directories": {
+      "output": "build"
+    },
+    "win": {
+      "icon": "xxx/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "yzf"
+    },
+    "files": [
+      "dist/**/*"
+    ]
   }
 }
