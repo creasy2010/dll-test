@@ -12,7 +12,7 @@ import {join} from  'path';
 var ffi = require('ffi');
 // import ffi from  'ffi';
 
-var libpath = join(__dirname, '../YzfDrTwains');
+var libpath = join(__dirname, 'YzfDrTwains');
 var testLib = ffi.Library(libpath, {
   'OpenDev': [[], ['bool']],
   'DevIsOpen': [[], ['bool']],
