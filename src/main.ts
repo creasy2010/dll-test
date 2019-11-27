@@ -31,9 +31,10 @@ const filter = {
 function createWindow() {
   // Create the browser window.
   mainWindow = new BrowserWindow({
-    fullscreen:true,
+    fullscreen:false,
     // height: 600,
     webPreferences: {
+      devTools:true,
       contextIsolation: false,
       preload: join(__dirname,'./preload.js'),
       nodeIntegration: true,
@@ -43,7 +44,7 @@ function createWindow() {
   });
 
   mainWindow.loadURL("http://fpcy.yunzhangfang.com/");
-
+  mainWindow.webContents.openDevTools();
   mainWindow.on("closed", () => {
     mainWindow = null;
   });
