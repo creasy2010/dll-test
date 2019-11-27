@@ -16,8 +16,8 @@ var testLib = ffi.Library(libpath, {
     'OpenDev': ['void', ['bool']],
     'DevIsOpen': ['void', ['bool']],
     'Scan': ['void', ['bool']],
-    'GetImageCounts': ['void', ['bool']],
-    'GetStatus': ['void', ['bool']],
+    'GetImageCounts': ['void', ['int']],
+    'GetStatus': ['void', ['int']],
     'CloseDev': ['void', ['bool']]
 });
 console.log("Scan方法返回值::", testLib.Scan());
