@@ -37,14 +37,14 @@
     "productName": "scanApp",
     "appId": "com.yzf.scanApp",
     "copyright": "yzf",
-    "extraResources":  [
-      "./dist/**/*.dll"
-    ],
     "directories": {
       "output": "build"
     },
     "win": {
       "icon": "xxx/icon.ico",
+      "extraResources":  [
+        "./dist/**/*.dll"
+      ],
       "target": [
         {
           "target": "nsis",
