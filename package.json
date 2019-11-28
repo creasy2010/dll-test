@@ -2,7 +2,7 @@
   "name": "dll-test",
   "version": "1.0.0",
   "description": "node 加载dll测试",
-  "main": "./dist/index.js",
+  "main": "./dist/main.js",
   "scripts": {
     "build": "tsc ",
     "rebuild": "electron-rebuild",
