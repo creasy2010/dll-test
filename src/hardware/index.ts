@@ -22,7 +22,6 @@ var testLib = ffi.Library(libpath, {
 });
 
 export class Scan {
-  constructor() {}
 
   static scan(): boolean {
     console.log('执行 scan');
