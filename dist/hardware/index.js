@@ -20,7 +20,6 @@ var testLib = ffi.Library(libpath, {
     CloseDev: ['bool', []],
 });
 class Scan {
-    constructor() { }
     static scan() {
         console.log('执行 scan');
         return testLib.Scan();
@@ -49,6 +48,7 @@ class Scan {
 exports.Scan = Scan;
 (async () => {
     if (Scan.openDev()) {
+        console.log('打开设备成功');
         Scan.scan();
     }
     else {

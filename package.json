@@ -7,6 +7,7 @@
     "build": "tsc ",
     "rebuild": "electron-rebuild",
     "exe": "electron-builder build",
+    "exeWin": "electron-builder --windows",
     "start": "electron ./dist/main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -36,11 +37,23 @@
     "productName": "scanApp",
     "appId": "com.yzf.scanApp",
     "copyright": "yzf",
+    "extraResources":  [
+      "./dist/**/*.dll"
+    ],
     "directories": {
       "output": "build"
     },
     "win": {
-      "icon": "xxx/icon.ico"
+      "icon": "xxx/icon.ico",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        }
+      ]
     },
     "nsis": {
       "oneClick": false,
