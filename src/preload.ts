@@ -8,7 +8,7 @@
  **/
 
 import {ipcRenderer} from 'electron';
-// import {Scan} from './hardware';
+import {Scan} from './hardware';
 import {factorial} from './example/factorial';
 import * as urllib from 'urllib';
 import * as path from 'path';
@@ -39,6 +39,6 @@ window.__dev__ = {
     __dirname,
     process.cwd()
   ],
-  // scan: Scan,
+  scan: Scan,
   factorial,
 };
