@@ -7,11 +7,12 @@
  * @Date    2019/11/21
  **/
 
-import {join} from 'path';
+import {getDllAbsPath} from "../util";
 
 var ffi = require('ffi');
+var libpath = getDllAbsPath("./hardware/YzfDrTwains");
 
-var libpath = join(__dirname, 'YzfDrTwains');
+
 var testLib = ffi.Library(libpath, {
   OpenDev: ['bool', []],
   DevIsOpen: ['bool', []],

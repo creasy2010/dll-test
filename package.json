@@ -29,6 +29,7 @@
     "typescript": "^3.7.2"
   },
   "dependencies": {
+    "@types/fs-extra": "^8.0.1",
     "ffi": "^2.3.0",
     "fs-extra": "^8.1.0",
     "urllib": "^2.34.1"
@@ -42,7 +43,7 @@
     },
     "win": {
       "icon": "xxx/icon.ico",
-      "extraResources":  [
+      "extraResources": [
         "./dist/**/*.dll"
       ],
       "target": [

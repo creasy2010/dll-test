@@ -9,7 +9,7 @@
 
 import {ipcRenderer} from 'electron';
 // import {Scan} from './hardware';
-// import {factorial} from './example/factorial';
+import {factorial} from './example/factorial';
 import * as urllib from 'urllib';
 import * as path from 'path';
 import * as fse from 'fs-extra';
@@ -40,5 +40,5 @@ window.__dev__ = {
     process.cwd()
   ],
   // scan: Scan,
-  // factorial,
+  factorial,
 };

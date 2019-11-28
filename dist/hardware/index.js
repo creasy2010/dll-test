@@ -8,9 +8,9 @@
  * @Date    2019/11/21
  **/
 Object.defineProperty(exports, "__esModule", { value: true });
-const path_1 = require("path");
+const util_1 = require("../util");
 var ffi = require('ffi');
-var libpath = path_1.join(__dirname, 'YzfDrTwains');
+var libpath = util_1.getDllAbsPath("./hardware/YzfDrTwains");
 var testLib = ffi.Library(libpath, {
     OpenDev: ['bool', []],
     DevIsOpen: ['bool', []],

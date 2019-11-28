@@ -7,10 +7,11 @@
  * @Date    2019/11/26
  **/
 
-import {join} from 'path';
+import {getDllAbsPath} from "../util";
 var ffi = require('ffi');
 
-var libfactorial = ffi.Library(join(__dirname,'./libfactorial'), {
+
+var libfactorial = ffi.Library(getDllAbsPath("./example/libfactorial"), {
   factorial: ['uint64', ['int']],
 });
 
