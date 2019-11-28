@@ -8,8 +8,8 @@
  **/
 
 import {ipcRenderer} from 'electron';
-import {Scan} from './hardware';
-import {factorial} from './example/factorial';
+// import {Scan} from './hardware';
+// import {factorial} from './example/factorial';
 import * as urllib from 'urllib';
 import * as path from 'path';
 import * as fse from 'fs-extra';
@@ -35,6 +35,10 @@ window.readConfig = function() {
 // @ts-ignore
 window.__dev__ = {
   fse,
-  scan: Scan,
-  factorial,
+  paths:[
+    __dirname,
+    process.cwd()
+  ],
+  // scan: Scan,
+  // factorial,
 };

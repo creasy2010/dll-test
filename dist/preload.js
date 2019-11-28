@@ -9,8 +9,6 @@
  **/
 Object.defineProperty(exports, "__esModule", { value: true });
 const electron_1 = require("electron");
-const hardware_1 = require("./hardware");
-const factorial_1 = require("./example/factorial");
 const fse = require("fs-extra");
 console.log(electron_1.ipcRenderer.sendSync('synchronous-message', 'ping'));
 electron_1.ipcRenderer.on('asynchronous-reply', (event, arg) => {
@@ -30,6 +28,8 @@ window.readConfig = function () {
 // @ts-ignore
 window.__dev__ = {
     fse,
-    scan: hardware_1.Scan,
-    factorial: factorial_1.factorial,
+    paths: [
+        __dirname,
+        process.cwd()
+    ],
 };
