@@ -5,9 +5,10 @@
     "target": "es2017",
     "noImplicitAny": false,
     "sourceMap": false,
-    "lib": ["es2015","es2017"],
+    "lib": ["es2015","es2017","dom"],
     "outDir": "./dist",
     "declaration": false
   },
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
+  "include": ["src"]
 }
