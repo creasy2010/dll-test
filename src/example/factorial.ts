@@ -11,7 +11,7 @@ import {getDllAbsPath} from "../util";
 var ffi = require('ffi');
 
 
-var libfactorial = ffi.Library(getDllAbsPath("./example/libfactorial"), {
+var libfactorial = ffi.Library(getDllAbsPath("./example/libfactorial-hu-32"), {
   factorial: ['uint64', ['int']],
 });
 
