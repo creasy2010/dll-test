@@ -10,7 +10,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const util_1 = require("../util");
 var ffi = require('ffi');
-var libpath = util_1.getDllAbsPath("./hardware/YzfDrTwains");
+var libpath = util_1.getDllAbsPath("./hardware/YzfDrTwains-32");
 var testLib = ffi.Library(libpath, {
     OpenDev: ['bool', []],
     DevIsOpen: ['bool', []],
