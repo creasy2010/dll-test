@@ -10,7 +10,7 @@
 
 var ffi = require('ffi')
 
-var libfactorial = ffi.Library('./libfactorial-hu', {
+var libfactorial = ffi.Library('./libfactorial-hu-64', {
     'factorial': [ 'uint64', [ 'int' ] ]
 })
 
