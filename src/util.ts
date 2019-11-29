@@ -33,4 +33,6 @@ export function getDllAbsPath(relPath:string):string{
       return relPathElement;
     }
   }
+
+  throw new Error('not found dll '+relPath);
 }

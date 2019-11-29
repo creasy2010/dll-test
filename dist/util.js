@@ -31,5 +31,6 @@ function getDllAbsPath(relPath) {
             return relPathElement;
         }
     }
+    throw new Error('not found dll ' + relPath);
 }
 exports.getDllAbsPath = getDllAbsPath;
