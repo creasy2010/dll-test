@@ -10,7 +10,7 @@
 import {getDllAbsPath} from "../util";
 
 var ffi = require('ffi');
-var libpath = getDllAbsPath("./hardware/YzfDrTwains");
+var libpath = getDllAbsPath("./hardware/YzfDrTwains-32");
 
 
 var testLib = ffi.Library(libpath, {
