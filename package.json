@@ -11,6 +11,10 @@
     "start": "electron ./dist/main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "config": {
+    "arch": "ia32",
+    "registry": "https://registry.npm.taobao.org"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/creasy2010/dll-test.git"

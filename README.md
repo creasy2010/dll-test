@@ -8,6 +8,7 @@ node 加载dll测试
 ##windows 启动
 ``` shell
 yarn
+npm install --registry=https://registry.npm.taobao.org
 
 # https://github.com/electron/electron-rebuild
 .\node_modules\.bin\electron-rebuild.cmd
