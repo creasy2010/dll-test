@@ -14,6 +14,7 @@ let possiableDirs = [
   //window电脑处理
   join( process.cwd(),'/resources/dist'),
   //本地运行时.
+  join( process.cwd(),'/dist'),
   join( process.cwd(),'/dist/dist')
 ]
 

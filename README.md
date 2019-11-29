@@ -26,6 +26,15 @@ npm run start
 
 #打包
 
+
+## window
+```shell
+npm run exe
+```
+
+
+## mac
+
 ```shell
 npm run exe
 ```

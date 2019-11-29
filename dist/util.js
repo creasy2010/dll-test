@@ -14,6 +14,7 @@ let possiableDirs = [
     //window电脑处理
     path_1.join(process.cwd(), '/resources/dist'),
     //本地运行时.
+    path_1.join(process.cwd(), '/dist'),
     path_1.join(process.cwd(), '/dist/dist')
 ];
 let format = process.platform === 'win32' ? ".dll" : ".dylib";
