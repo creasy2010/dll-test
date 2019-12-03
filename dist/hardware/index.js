@@ -46,12 +46,3 @@ class Scan {
     }
 }
 exports.Scan = Scan;
-(async () => {
-    if (Scan.openDev()) {
-        console.log('打开设备成功');
-        Scan.scan();
-    }
-    else {
-        console.log('打开设备失败');
-    }
-})();
