@@ -54,12 +54,3 @@ export class Scan {
     return testLib.CloseDev();
   }
 }
-
-(async () => {
-  if (Scan.openDev()) {
-    console.log('打开设备成功');
-    Scan.scan();
-  } else {
-    console.log('打开设备失败');
-  }
-})();

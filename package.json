@@ -48,7 +48,8 @@
     "win": {
       "icon": "xxx/icon.ico",
       "extraResources": [
-        "./dist/**/*.dll"
+        "./dist/**/*.dll",
+        "./dist/**/*.conf"
       ],
       "target": [
         {
