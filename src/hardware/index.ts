@@ -24,6 +24,10 @@ var testLib = ffi.Library(libpath, {
 
 export class Scan {
 
+  /**
+   * 扫描后返回,图片路径;
+   * @returns {string}
+   */
   static scan(): string {
     console.log('执行 scan');
     return testLib.Scan();
