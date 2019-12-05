@@ -16,7 +16,7 @@ var libpath = getDllAbsPath("./hardware/YzfDrTwains-32");
 var testLib = ffi.Library(libpath, {
   OpenDev: ['bool', []],
   DevIsOpen: ['bool', []],
-  Scan: ['bool', []],
+  Scan: ['string', []],
   GetImageCounts: ['int', []],
   GetStatus: ['int', []],
   CloseDev: ['bool', []],
@@ -24,7 +24,7 @@ var testLib = ffi.Library(libpath, {
 
 export class Scan {
 
-  static scan(): boolean {
+  static scan(): string {
     console.log('执行 scan');
     return testLib.Scan();
   }
