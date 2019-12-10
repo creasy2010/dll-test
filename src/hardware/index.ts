@@ -7,11 +7,10 @@
  * @Date    2019/11/21
  **/
 
-import {getDllAbsPath} from "../util";
+import {getDllAbsPath} from '../util';
 
 var ffi = require('ffi');
-var libpath = getDllAbsPath("./hardware/YzfDrTwains-32");
-
+var libpath = getDllAbsPath('./hardware/YzfDrTwains-32');
 
 var testLib = ffi.Library(libpath, {
   OpenDev: ['bool', []],
@@ -23,14 +22,22 @@ var testLib = ffi.Library(libpath, {
 });
 
 export class Scan {
-
   /**
    * 扫描后返回,图片路径;
    * @returns {string}
    */
-  static scan(): string {
+  static scan(): Promise<string> {
     console.log('执行 scan');
-    return testLib.Scan();
+    return new Promise((resolve, reject) => {
+      testLib.Scan.async((err, result) => {
+        console.log('scan返回', err, result);
+        if (err) {
+          reject(err);
+        } else {
+          resolve(result);
+        }
+      });
+    });
   }
 
   static openDev(): boolean {
