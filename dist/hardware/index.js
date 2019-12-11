@@ -10,6 +10,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const util_1 = require("../util");
 const fs = require("fs");
+const path_1 = require("path");
 var ffi = require('ffi');
 var libpath = util_1.getDllAbsPath('./hardware/YzfDrTwains-32');
 var testLib = ffi.Library(libpath, {
@@ -31,7 +32,7 @@ class Scan {
         console.log('执行 scan return', outputDir);
         if (outputDir && fs.existsSync(outputDir)) {
             let files = fs.readdirSync(outputDir);
-            return files;
+            return files.map(fileName => path_1.join(outputDir, fileName));
         }
         else {
             return [];

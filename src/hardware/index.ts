@@ -9,6 +9,7 @@
 
 import {getDllAbsPath} from '../util';
 import * as fs from 'fs';
+import {join} from 'path';
 
 var ffi = require('ffi');
 var libpath = getDllAbsPath('./hardware/YzfDrTwains-32');
@@ -33,7 +34,7 @@ export class Scan {
     console.log('执行 scan return',outputDir);
     if(outputDir && fs.existsSync(outputDir)){
       let files =  fs.readdirSync(outputDir);
-      return files;
+      return files.map(fileName=>join(outputDir,fileName));
     }else{
       return [];
     }
