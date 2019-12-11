@@ -9,20 +9,36 @@
  **/
 Object.defineProperty(exports, "__esModule", { value: true });
 const util_1 = require("../util");
+const fs = require("fs");
 var ffi = require('ffi');
-var libpath = util_1.getDllAbsPath("./hardware/YzfDrTwains-32");
+var libpath = util_1.getDllAbsPath('./hardware/YzfDrTwains-32');
 var testLib = ffi.Library(libpath, {
     OpenDev: ['bool', []],
     DevIsOpen: ['bool', []],
-    Scan: ['bool', []],
+    Scan: ['string', []],
     GetImageCounts: ['int', []],
     GetStatus: ['int', []],
     CloseDev: ['bool', []],
 });
 class Scan {
+    /**
+     * 扫描后返回,图片路径;
+     * @returns {string}
+     */
     static scan() {
         console.log('执行 scan');
-        return testLib.Scan();
+        return new Promise((resolve, reject) => {
+            testLib.Scan.async((err, outputDir) => {
+                console.log('scan返回', err, outputDir);
+                let files = fs.readdirSync(outputDir);
+                if (err) {
+                    reject(err);
+                }
+                else {
+                    resolve(files);
+                }
+            });
+        });
     }
     static openDev() {
         console.log('执行 openDev');
