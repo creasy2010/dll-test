@@ -27,18 +27,21 @@ class Scan {
      */
     static scan() {
         console.log('执行 scan');
-        return new Promise((resolve, reject) => {
-            testLib.Scan.async((err, outputDir) => {
-                console.log('scan返回', err, outputDir);
-                let files = fs.readdirSync(outputDir);
-                if (err) {
-                    reject(err);
-                }
-                else {
-                    resolve(files);
-                }
-            });
-        });
+        let outputDir = testLib.Scan();
+        let files = fs.readdirSync(outputDir);
+        console.log('执行 scan return', files);
+        return files;
+        // return new Promise((resolve, reject) => {
+        //   testLib.Scan.async((err, outputDir:string) => {
+        //     console.log('scan返回', err, outputDir);
+        //    let files =  fs.readdirSync(outputDir);
+        //     if (err) {
+        //       reject(err);
+        //     } else {
+        //       resolve(files);
+        //     }
+        //   });
+        // });
     }
     static openDev() {
         console.log('执行 openDev');
