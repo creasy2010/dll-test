@@ -28,9 +28,14 @@ class Scan {
     static scan() {
         console.log('执行 scan');
         let outputDir = testLib.Scan();
-        let files = fs.readdirSync(outputDir);
-        console.log('执行 scan return', files);
-        return files;
+        console.log('执行 scan return', outputDir);
+        if (outputDir && fs.existsSync(outputDir)) {
+            let files = fs.readdirSync(outputDir);
+            return files;
+        }
+        else {
+            return [];
+        }
         // return new Promise((resolve, reject) => {
         //   testLib.Scan.async((err, outputDir:string) => {
         //     console.log('scan返回', err, outputDir);
