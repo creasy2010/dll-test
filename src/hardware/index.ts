@@ -8,6 +8,7 @@
  **/
 
 import {getDllAbsPath} from '../util';
+import * as fs from 'fs';
 
 var ffi = require('ffi');
 var libpath = getDllAbsPath('./hardware/YzfDrTwains-32');
@@ -26,15 +27,16 @@ export class Scan {
    * 扫描后返回,图片路径;
    * @returns {string}
    */
-  static scan(): Promise<string> {
+  static scan(): Promise<string[]> {
     console.log('执行 scan');
     return new Promise((resolve, reject) => {
-      testLib.Scan.async((err, result) => {
-        console.log('scan返回', err, result);
+      testLib.Scan.async((err, outputDir:string) => {
+        console.log('scan返回', err, outputDir);
+       let files =  fs.readdirSync(outputDir);
         if (err) {
           reject(err);
         } else {
-          resolve(result);
+          resolve(files);
         }
       });
     });
