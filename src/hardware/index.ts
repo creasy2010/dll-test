@@ -32,6 +32,7 @@ export class Scan {
     console.log('执行 scan');
     let outputDir = testLib.Scan();
     console.log('执行 scan return',outputDir);
+
     if(outputDir && fs.existsSync(outputDir)){
       let files =  fs.readdirSync(outputDir);
       return files.map(fileName=>join(outputDir,fileName));
