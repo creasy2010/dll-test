@@ -32,22 +32,11 @@ class Scan {
         console.log('执行 scan return', outputDir);
         if (outputDir && fs.existsSync(outputDir)) {
             let files = fs.readdirSync(outputDir);
-            return files.map(fileName => path_1.join(outputDir, fileName));
+            return files.map(fileName => util_1.getImageContent(path_1.join(outputDir, fileName)));
         }
         else {
             return [];
         }
-        // return new Promise((resolve, reject) => {
-        //   testLib.Scan.async((err, outputDir:string) => {
-        //     console.log('scan返回', err, outputDir);
-        //    let files =  fs.readdirSync(outputDir);
-        //     if (err) {
-        //       reject(err);
-        //     } else {
-        //       resolve(files);
-        //     }
-        //   });
-        // });
     }
     static openDev() {
         console.log('执行 openDev');

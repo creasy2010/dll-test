@@ -7,7 +7,7 @@
  * @Date    2019/11/21
  **/
 
-import {getDllAbsPath} from '../util';
+import {getDllAbsPath, getImageContent} from '../util';
 import * as fs from 'fs';
 import {join} from 'path';
 
@@ -32,24 +32,12 @@ export class Scan {
     console.log('执行 scan');
     let outputDir = testLib.Scan();
     console.log('执行 scan return',outputDir);
-
     if(outputDir && fs.existsSync(outputDir)){
       let files =  fs.readdirSync(outputDir);
-      return files.map(fileName=>join(outputDir,fileName));
+      return files.map(fileName=>getImageContent(join(outputDir,fileName)));
     }else{
       return [];
     }
-    // return new Promise((resolve, reject) => {
-    //   testLib.Scan.async((err, outputDir:string) => {
-    //     console.log('scan返回', err, outputDir);
-    //    let files =  fs.readdirSync(outputDir);
-    //     if (err) {
-    //       reject(err);
-    //     } else {
-    //       resolve(files);
-    //     }
-    //   });
-    // });
   }
 
   static openDev(): boolean {

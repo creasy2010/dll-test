@@ -36,6 +36,7 @@
     "@types/fs-extra": "^8.0.1",
     "ffi": "^2.3.0",
     "fs-extra": "^8.1.0",
+    "mime-types": "^2.1.25",
     "urllib": "^2.34.1"
   },
   "build": {
