@@ -56,7 +56,7 @@ class Scan {
                             .filter(item => !!item));
                     }
                     else {
-                        return [];
+                        resolve([]);
                     }
                 }
             });
