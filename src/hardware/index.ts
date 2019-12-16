@@ -7,7 +7,7 @@
  * @Date    2019/11/21
  **/
 
-import {getDllAbsPath, getImageContent} from '../util';
+import {getDllAbsPath, getImageContent, saveConfig} from '../util';
 import * as fs from 'fs';
 import {join} from 'path';
 
@@ -24,6 +24,14 @@ var testLib = ffi.Library(libpath, {
 });
 
 export class Scan {
+
+  static set(config:{
+    [key:string]:string
+  }):void {
+    saveConfig(config);
+    return ;
+  }
+
   /**
    * 扫描后返回,图片路径;
    * @returns {string}

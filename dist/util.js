@@ -36,6 +36,20 @@ function getDllAbsPath(relPath) {
     throw new Error('not found dll ' + relPath);
 }
 exports.getDllAbsPath = getDllAbsPath;
+function getDllDir() {
+    for (let i = 0, iLen = possiableDirs.length; i < iLen; i++) {
+        let relPathElement = path_1.join(possiableDirs[i]);
+        if (fs_extra_1.pathExistsSync(relPathElement)) {
+            return relPathElement;
+        }
+    }
+}
+function saveConfig(config) {
+    let savePath = path_1.join(getDllDir(), "config.json");
+    fs_extra_1.writeJSONSync(savePath, config);
+    return;
+}
+exports.saveConfig = saveConfig;
 /**
  * 加载图片内容 base64;;
  * @param {string} file

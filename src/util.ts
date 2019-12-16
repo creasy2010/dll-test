@@ -8,7 +8,7 @@
  **/
 
 import {join, resolve} from 'path';
-import {pathExistsSync} from 'fs-extra';
+import {pathExistsSync,writeJSONSync} from 'fs-extra';
 import * as fs from 'fs';
 const mimeType = require('mime-types');
 
@@ -38,6 +38,25 @@ export function getDllAbsPath(relPath: string): string {
 
   throw new Error('not found dll ' + relPath);
 }
+
+
+function getDllDir() :string{
+  for (let i = 0, iLen = possiableDirs.length; i < iLen; i++) {
+    let relPathElement = join(possiableDirs[i]);
+    if (pathExistsSync(relPathElement)) {
+      return relPathElement;
+    }
+  }
+}
+
+
+export  function saveConfig(config:object):void{
+
+  let savePath = join(getDllDir(),"config.json");
+  writeJSONSync(savePath,config)
+  return ;
+}
+
 
 /**
  * 加载图片内容 base64;;

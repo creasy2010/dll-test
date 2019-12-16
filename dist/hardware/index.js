@@ -22,6 +22,10 @@ var testLib = ffi.Library(libpath, {
     CloseDev: ['bool', []],
 });
 class Scan {
+    static set(config) {
+        util_1.saveConfig(config);
+        return;
+    }
     /**
      * 扫描后返回,图片路径;
      * @returns {string}
