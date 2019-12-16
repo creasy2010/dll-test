@@ -31,13 +31,38 @@ export class Scan {
   static scan(): string[] {
     console.log('执行 scan');
     let outputDir = testLib.Scan();
-    console.log('执行 scan return',outputDir);
-    if(outputDir && fs.existsSync(outputDir)){
-      let files =  fs.readdirSync(outputDir);
-      return files.map(fileName=>getImageContent(join(outputDir,fileName))).filter(item=>!!item);
-    }else{
+    console.log('执行 scan return', outputDir);
+    if (outputDir && fs.existsSync(outputDir)) {
+      let files = fs.readdirSync(outputDir);
+      return files
+        .map(fileName => getImageContent(join(outputDir, fileName)))
+        .filter(item => !!item);
+    } else {
       return [];
     }
+  }
+
+  static scanAsync(): Promise<string[]> {
+    return new Promise((resolve, reject) => {
+      testLib.Scan.async(function(err, res) {
+        if (err) {
+          reject(err);
+        } else {
+          let outputDir = res;
+          console.log('执行 scan return', outputDir);
+          if (outputDir && fs.existsSync(outputDir)) {
+            let files = fs.readdirSync(outputDir);
+            resolve(
+              files
+                .map(fileName => getImageContent(join(outputDir, fileName)))
+                .filter(item => !!item),
+            );
+          } else {
+            resolve( []);
+          }
+        }
+      });
+    });
   }
 
   static openDev(): boolean {
