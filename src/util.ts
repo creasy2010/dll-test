@@ -60,6 +60,6 @@ export function getImageContent(file: string): string {
   let data = fs.readFileSync(filePath);
   // 转换为 data:image/jpeg;base64,***** 格式的字符串
   let base64 =
-    'data:' + fileMimeType + ';base64,' + new Buffer(data).toString('base64');
+    'data:' + fileMimeType + ';base64,' + Buffer.from(data).toString('base64');
   return base64;
 }
