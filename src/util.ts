@@ -44,7 +44,7 @@ export function getDllAbsPath(relPath: string): string {
  * @param {string} file
  * @returns {string}
  */
-export function getImageContent(file: string): string {
+export function getImageContent(file: string): string | undefined {
   let filePath = resolve(file); // 原始文件地址
   // let fileName = filePath
   //   .split('\\')

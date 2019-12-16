@@ -34,7 +34,7 @@ export class Scan {
     console.log('执行 scan return',outputDir);
     if(outputDir && fs.existsSync(outputDir)){
       let files =  fs.readdirSync(outputDir);
-      return files.map(fileName=>getImageContent(join(outputDir,fileName)));
+      return files.map(fileName=>getImageContent(join(outputDir,fileName))).filter(item=>!!item);
     }else{
       return [];
     }
