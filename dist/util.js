@@ -45,8 +45,10 @@ function getDllDir() {
     }
 }
 function saveConfig(config) {
-    let savePath = path_1.join(getDllDir(), "config.json");
-    fs_extra_1.writeJSONSync(savePath, config);
+    if (config) {
+        let savePath = path_1.join(getDllDir(), "hardware/config.json");
+        fs_extra_1.writeJSONSync(savePath, config);
+    }
     return;
 }
 exports.saveConfig = saveConfig;

@@ -52,8 +52,10 @@ function getDllDir() :string{
 
 export  function saveConfig(config:object):void{
 
-  let savePath = join(getDllDir(),"config.json");
-  writeJSONSync(savePath,config)
+  if(config) {
+    let savePath = join(getDllDir(),"hardware/config.json");
+    writeJSONSync(savePath,config);
+  }
   return ;
 }
 
