@@ -18,6 +18,7 @@ var testLib = ffi.Library(libpath, {
   OpenDev: ['bool', []],
   DevIsOpen: ['bool', []],
   Scan: ['string', []],
+  SetDev: ['bool', []],
   GetImageCounts: ['int', []],
   GetStatus: ['int', []],
   CloseDev: ['bool', []],
@@ -29,6 +30,7 @@ export class Scan {
     [key:string]:string
   }):void {
     saveConfig(config);
+    testLib.SetDev();
     return ;
   }
 
