@@ -10,15 +10,13 @@
 import {ipcRenderer} from 'electron';
 import {Scan} from './hardware';
 // import {factorial} from './example/factorial';
-import * as urllib from 'urllib';
-import * as path from 'path';
 import * as fse from 'fs-extra';
 
-console.log(ipcRenderer.sendSync('synchronous-message', 'ping'));
-ipcRenderer.on('asynchronous-reply', (event, arg) => {
-  console.log(arg); // prints "pong"
-});
-ipcRenderer.send('asynchronous-message', 'ping');
+//console.log(ipcRenderer.sendSync('synchronous-message', 'ping'));
+//ipcRenderer.on('asynchronous-reply', (event, arg) => {
+//  console.log(arg); // prints "pong"
+//});
+//ipcRenderer.send('asynchronous-message', 'ping');
 
 process.once('loaded', () => {
   const _setImmediate = setImmediate;
@@ -30,7 +28,7 @@ process.once('loaded', () => {
 
 //@ts-ignore
 window.readConfig = function() {
-  ipcRenderer.send('asynchronous-message', 'ping');
+ // ipcRenderer.send('asynchronous-message', 'ping');
 };
 // @ts-ignore
 window.__dev__ = {

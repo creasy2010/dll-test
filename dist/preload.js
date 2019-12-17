@@ -8,14 +8,14 @@
  * @Date    2019/6/2
  **/
 Object.defineProperty(exports, "__esModule", { value: true });
-const electron_1 = require("electron");
 const hardware_1 = require("./hardware");
+// import {factorial} from './example/factorial';
 const fse = require("fs-extra");
-console.log(electron_1.ipcRenderer.sendSync('synchronous-message', 'ping'));
-electron_1.ipcRenderer.on('asynchronous-reply', (event, arg) => {
-    console.log(arg); // prints "pong"
-});
-electron_1.ipcRenderer.send('asynchronous-message', 'ping');
+//console.log(ipcRenderer.sendSync('synchronous-message', 'ping'));
+//ipcRenderer.on('asynchronous-reply', (event, arg) => {
+//  console.log(arg); // prints "pong"
+//});
+//ipcRenderer.send('asynchronous-message', 'ping');
 process.once('loaded', () => {
     const _setImmediate = setImmediate;
     const _clearImmediate = clearImmediate;
@@ -24,7 +24,7 @@ process.once('loaded', () => {
 });
 //@ts-ignore
 window.readConfig = function () {
-    electron_1.ipcRenderer.send('asynchronous-message', 'ping');
+    // ipcRenderer.send('asynchronous-message', 'ping');
 };
 // @ts-ignore
 window.__dev__ = {
