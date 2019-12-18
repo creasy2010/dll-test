@@ -1,7 +1,7 @@
 {
   "name": "dll-test",
   "version": "1.0.0",
-  "description": "专票查验平台",
+  "description": "票易管",
   "main": "./dist/main.js",
   "scripts": {
     "build": "tsc ",
@@ -68,7 +68,7 @@
       "allowToChangeInstallationDirectory": true,
       "createDesktopShortcut": true,
       "createStartMenuShortcut": true,
-      "shortcutName": "专票查验工具"
+      "shortcutName": "票易管"
     },
     "files": [
       "dist/**/*"
