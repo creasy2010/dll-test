@@ -37,8 +37,8 @@ function createWindow() {
         // width: 800,
     });
     // mainWindow.setAlwaysOnTop(true,'');normal, floating, torn-off-menu, modal-panel, main-menu, status, pop-up-menu, screen-saver,
-    // mainWindow.loadURL("http://fpcy.yunzhangfang.com/");
-    mainWindow.loadURL("http://172.24.142.1:8888");
+    mainWindow.loadURL("http://fpcy.yunzhangfang.com/");
+    // mainWindow.loadURL("http://172.24.142.1:8888");
     mainWindow.webContents.openDevTools();
     mainWindow.on("closed", () => {
         mainWindow = null;
