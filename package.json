@@ -1,7 +1,7 @@
 {
   "name": "dll-test",
   "version": "1.0.0",
-  "description": "node 加载dll测试",
+  "description": "专票查验平台",
   "main": "./dist/main.js",
   "scripts": {
     "build": "tsc ",
@@ -47,9 +47,10 @@
       "output": "build"
     },
     "win": {
-      "icon": "xxx/icon.ico",
+      "icon": "logo.png",
       "extraResources": [
         "./dist/**/*.dll",
+        "./dist/**/*.png",
         "./dist/**/*.conf"
       ],
       "target": [
@@ -67,7 +68,7 @@
       "allowToChangeInstallationDirectory": true,
       "createDesktopShortcut": true,
       "createStartMenuShortcut": true,
-      "shortcutName": "yzf"
+      "shortcutName": "专票查验工具"
     },
     "files": [
       "dist/**/*"

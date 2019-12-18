@@ -28,6 +28,8 @@ function createWindow() {
     // Create the browser window.
     mainWindow = new electron_1.BrowserWindow({
         fullscreen: true,
+        icon: "./logo.png",
+        title: "专票查验工具",
         webPreferences: {
             devTools: false,
             contextIsolation: false,
