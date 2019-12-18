@@ -40,14 +40,14 @@
     "urllib": "^2.34.1"
   },
   "build": {
-    "productName": "scanApp",
+    "productName": "scan",
     "appId": "com.yzf.scanApp",
-    "copyright": "yzf",
+    "copyright": "云帐房",
     "directories": {
       "output": "build"
     },
     "win": {
-      "icon": "logo.png",
+      "icon": "./logo.png",
       "extraResources": [
         "./dist/**/*.dll",
         "./dist/**/*.png",
