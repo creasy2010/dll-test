@@ -31,10 +31,9 @@ const filter = {
 function createWindow() {
   // Create the browser window.
   mainWindow = new BrowserWindow({
-    fullscreen:false,
-    // height: 600,
+    fullscreen:true,
     webPreferences: {
-      devTools:true,
+      devTools:false,
       contextIsolation: false,
       preload: join(__dirname,'./preload.js'),
       nodeIntegration: true,

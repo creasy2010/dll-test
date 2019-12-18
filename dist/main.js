@@ -27,10 +27,9 @@ const filter = {
 function createWindow() {
     // Create the browser window.
     mainWindow = new electron_1.BrowserWindow({
-        fullscreen: false,
-        // height: 600,
+        fullscreen: true,
         webPreferences: {
-            devTools: true,
+            devTools: false,
             contextIsolation: false,
             preload: path_1.join(__dirname, './preload.js'),
             nodeIntegration: true,
