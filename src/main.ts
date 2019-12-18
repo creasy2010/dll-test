@@ -33,7 +33,7 @@ function createWindow() {
   mainWindow = new BrowserWindow({
     fullscreen:false,
     icon:"./logo.png",
-    title:"专票查验工具",
+    title:"票易管",
     webPreferences: {
       devTools:false,
       contextIsolation: false,

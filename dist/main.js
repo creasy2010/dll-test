@@ -27,9 +27,9 @@ const filter = {
 function createWindow() {
     // Create the browser window.
     mainWindow = new electron_1.BrowserWindow({
-        fullscreen: true,
+        fullscreen: false,
         icon: "./logo.png",
-        title: "专票查验工具",
+        title: "票易管",
         webPreferences: {
             devTools: false,
             contextIsolation: false,
