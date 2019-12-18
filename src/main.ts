@@ -31,7 +31,7 @@ const filter = {
 function createWindow() {
   // Create the browser window.
   mainWindow = new BrowserWindow({
-    fullscreen:true,
+    fullscreen:false,
     icon:"./logo.png",
     title:"专票查验工具",
     webPreferences: {
