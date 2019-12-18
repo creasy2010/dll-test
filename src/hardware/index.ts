@@ -40,15 +40,20 @@ export class Scan {
    */
   static scan(): string[] {
     console.log('执行 scan');
-    let outputDir = testLib.Scan();
+    let outputDir:string = testLib.Scan();
     console.log('执行 scan return', outputDir);
-    if (outputDir && fs.existsSync(outputDir)) {
-      let files = fs.readdirSync(outputDir);
-      return files
-        .map(fileName => getImageContent(join(outputDir, fileName)))
-        .filter(item => !!item);
-    } else {
-      return [];
+
+    if(outputDir.includes("error")){
+      throw new Error(outputDir);
+    }else{
+      if (outputDir && fs.existsSync(outputDir)) {
+        let files = fs.readdirSync(outputDir);
+        return files
+          .map(fileName => getImageContent(join(outputDir, fileName)))
+          .filter(item => !!item);
+      } else {
+        return [];
+      }
     }
   }
 
