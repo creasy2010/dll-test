@@ -47,7 +47,7 @@
       "output": "build"
     },
     "win": {
-      "icon": "./logo.png",
+      "icon": "icon.png",
       "extraResources": [
         "./dist/**/*.dll",
         "./dist/**/*.png",
