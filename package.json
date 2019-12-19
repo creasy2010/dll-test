@@ -1,7 +1,7 @@
 {
   "name": "dll-test",
   "version": "1.0.0",
-  "description": "票易管",
+  "description": "云帐房PYG",
   "main": "./dist/main.js",
   "scripts": {
     "build": "tsc ",
@@ -40,9 +40,9 @@
     "urllib": "^2.34.1"
   },
   "build": {
-    "productName": "scan",
+    "productName": "云帐房PYG",
     "appId": "com.yzf.scanApp",
-    "copyright": "云帐房",
+    "copyright": "云帐房PYG",
     "directories": {
       "output": "build"
     },
@@ -68,7 +68,7 @@
       "allowToChangeInstallationDirectory": true,
       "createDesktopShortcut": true,
       "createStartMenuShortcut": true,
-      "shortcutName": "票易管"
+      "shortcutName": "云帐房PYG"
     },
     "files": [
       "dist/**/*"

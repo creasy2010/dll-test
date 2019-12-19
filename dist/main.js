@@ -29,9 +29,9 @@ function createWindow() {
     mainWindow = new electron_1.BrowserWindow({
         fullscreen: false,
         icon: "./logo.png",
-        title: "票易管",
+        title: "云帐房PYG",
         webPreferences: {
-            devTools: false,
+            devTools: true,
             contextIsolation: false,
             preload: path_1.join(__dirname, './preload.js'),
             nodeIntegration: true,
@@ -42,9 +42,9 @@ function createWindow() {
     mainWindow.webContents.session.clearCache(function () {
         //some callback.
         mainWindow.loadURL("http://fpcy.yunzhangfang.com/");
+        mainWindow.webContents.openDevTools();
     });
     // mainWindow.loadURL("http://172.24.142.1:8888");
-    // mainWindow.webContents.openDevTools();
     mainWindow.on("closed", () => {
         mainWindow = null;
     });
