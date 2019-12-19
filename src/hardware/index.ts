@@ -9,6 +9,7 @@
 
 import {getDllAbsPath, getImageContent, saveConfig} from '../util';
 import * as fs from 'fs';
+import * as fse from 'fs-extra';
 import {join} from 'path';
 
 var ffi = require('ffi');
@@ -48,9 +49,12 @@ export class Scan {
     }else{
       if (outputDir && fs.existsSync(outputDir)) {
         let files = fs.readdirSync(outputDir);
-        return files
+        let fileContents=  files
           .map(fileName => getImageContent(join(outputDir, fileName)))
           .filter(item => !!item);
+        fse.removeSync(outputDir);
+        return fileContents;
+
       } else {
         return [];
       }

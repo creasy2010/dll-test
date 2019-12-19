@@ -10,6 +10,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const util_1 = require("../util");
 const fs = require("fs");
+const fse = require("fs-extra");
 const path_1 = require("path");
 var ffi = require('ffi');
 var libpath = util_1.getDllAbsPath('./hardware/YzfDrTwains-32');
@@ -42,9 +43,11 @@ class Scan {
         else {
             if (outputDir && fs.existsSync(outputDir)) {
                 let files = fs.readdirSync(outputDir);
-                return files
+                let fileContents = files
                     .map(fileName => util_1.getImageContent(path_1.join(outputDir, fileName)))
                     .filter(item => !!item);
+                fse.removeSync(outputDir);
+                return fileContents;
             }
             else {
                 return [];
