@@ -35,7 +35,7 @@ function createWindow() {
     icon:"./logo.png",
     title:"云帐房PYG",
     webPreferences: {
-      devTools:true,
+      devTools:false,
       contextIsolation: false,
       preload: join(__dirname,'./preload.js'),
       nodeIntegration: true,
@@ -47,7 +47,7 @@ function createWindow() {
   mainWindow.webContents.session.clearCache(function(){
     //some callback.
     mainWindow.loadURL("http://fpcy.yunzhangfang.com/");
-    mainWindow.webContents.openDevTools();
+    // mainWindow.webContents.openDevTools();
   });
   // mainWindow.loadURL("http://172.24.142.1:8888");
 
