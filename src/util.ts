@@ -50,11 +50,18 @@ function getDllDir() :string{
 }
 
 
-export  function saveConfig(config:object):void{
+/**
+ * 保存文件到相对路径中去
+ * @param {object} config
+ * @param {string} filePath
+ * @returns {string}
+ */
+export  function saveConfig(config:object,filePath:string):string{
 
   if(config) {
-    let savePath = join(getDllDir(),"hardware/config.json");
+    let savePath = join(getDllDir(),filePath);
     writeJSONSync(savePath,config);
+    return savePath;
   }
   return ;
 }

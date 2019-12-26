@@ -9,6 +9,7 @@
 
 import {ipcRenderer} from 'electron';
 import {Scan} from './hardware';
+import {Printer} from './printer';
 // import {factorial} from './example/factorial';
 import * as fse from 'fs-extra';
 
@@ -38,5 +39,6 @@ window.__dev__ = {
     process.cwd()
   ],
   scan: Scan,
+  printer: Printer,
   // factorial,
 };

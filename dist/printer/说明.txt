@@ -1,0 +1,12 @@
+只需要调用 PRTPDF.dll
+
+
+接口如下：
+
+char*  GetPrinters();//返回打印机列表的字符数组，以半角逗号分隔
+
+bool  SetParams(const char* _ParamPath, char*& _error); //第一个参数为传入的json文件完成路径，如果返回false,第二个参数为返回中文错误描述，是gbk编码格式
+
+bool  PrintFile(const char* _url, char*&_error);//第一个参数为传入的下载路径，如果返回false,第二个参数为返回的中文错误描述，是gbk编码格式
+
+

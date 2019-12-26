@@ -30,7 +30,7 @@ export class Scan {
   static set(config:{
     [key:string]:string
   }):void {
-    saveConfig(config);
+    saveConfig(config,"hardware/config.json");
     testLib.SetDev();
     return ;
   }
