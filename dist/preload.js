@@ -9,6 +9,7 @@
  **/
 Object.defineProperty(exports, "__esModule", { value: true });
 const hardware_1 = require("./hardware");
+const printer_1 = require("./printer");
 // import {factorial} from './example/factorial';
 const fse = require("fs-extra");
 //console.log(ipcRenderer.sendSync('synchronous-message', 'ping'));
@@ -34,4 +35,5 @@ window.__dev__ = {
         process.cwd()
     ],
     scan: hardware_1.Scan,
+    printer: printer_1.Printer,
 };

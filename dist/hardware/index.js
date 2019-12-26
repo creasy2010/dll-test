@@ -25,7 +25,7 @@ var testLib = ffi.Library(libpath, {
 });
 class Scan {
     static set(config) {
-        util_1.saveConfig(config);
+        util_1.saveConfig(config, "hardware/config.json");
         testLib.SetDev();
         return;
     }

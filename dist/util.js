@@ -44,10 +44,17 @@ function getDllDir() {
         }
     }
 }
-function saveConfig(config) {
+/**
+ * 保存文件到相对路径中去
+ * @param {object} config
+ * @param {string} filePath
+ * @returns {string}
+ */
+function saveConfig(config, filePath) {
     if (config) {
-        let savePath = path_1.join(getDllDir(), "hardware/config.json");
+        let savePath = path_1.join(getDllDir(), filePath);
         fs_extra_1.writeJSONSync(savePath, config);
+        return savePath;
     }
     return;
 }
